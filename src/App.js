@@ -20,10 +20,24 @@ class App extends React.Component {
    }
 
   addItem = (item) => {
-    debugger
     const { groceries } = this.state;
     const grocery = {item, id: this.getUniqId(), complete: false};
     this.setState({ groceries: [grocery, ...groceries]});
+  }
+
+  handleClick = (id) => {
+    this.setState({
+      groceries: this.state.groceries.map( grocery => {
+        if (grocery.id === id) {
+          return {
+            ...grocery,
+            complete: !grocery.complete
+          }
+        }
+        return grocery;
+      })
+      }
+    )
   }
 
   
@@ -31,7 +45,7 @@ class App extends React.Component {
     const { groceries } = this.state;
     return(
       <div>
-        <List name="Grocery List" items={groceries} />
+        <List name="Grocery List" items={groceries} itemClick={this.handleClick}/>
         <ItemForm addItem={this.addItem} />
       </div>
     )}
