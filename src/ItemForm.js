@@ -1,4 +1,6 @@
 import React from 'react';
+import './index.css';
+
 
 class ItemForm extends React.Component {
   state = { item: '' }
@@ -26,6 +28,8 @@ class ItemForm extends React.Component {
         required 
         placeholder="Add An Item" />
       </form>
+
+
     )}
   }
 }

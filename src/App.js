@@ -44,7 +44,7 @@ class App extends React.Component {
   render(){
     const { groceries } = this.state;
     return(
-      <div>
+      <div className ='App'>
         <List name="Grocery List" items={groceries} itemClick={this.handleClick}/>
         <ItemForm addItem={this.addItem} />
       </div>

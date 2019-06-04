@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Item = ({id, item, complete, itemClick}) => (
-  <li
+  <li id='color'
     style={ complete ? {...styles.grocery, ...styles.complete} : styles.grocery}
-    onClick={() => itemClick(id) }
+    onClick={() => itemClick(id)}
     >
       { item }
   </li>
@@ -11,7 +11,7 @@ const Item = ({id, item, complete, itemClick}) => (
 
 const styles = {
   grocery: { cursor: 'pointer'},
-  complete: { color: 'grey', textDecoration: 'line-through'}
+  complete: { color: '#57606f', textDecoration: 'line-through'},
 }
 
 export default Item;
