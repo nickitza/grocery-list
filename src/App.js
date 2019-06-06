@@ -2,14 +2,14 @@ import React from 'react';
 import List from './List'
 import ItemForm from './ItemForm'
 
-
 class App extends React.Component {
   state= {
     groceries: [
       { id: 1, item: "pineapple", complete: false},
       { id: 2, item: "tomatoes", complete: false},
       { id: 3, item: "avocado", complete: false},
-      { id: 4, item: "potatoes", complete: false}
+      { id: 4, item: "potatoes", complete: false},
+      { id: 5, item: "cat food", complete: false},
     ]
   }
 
@@ -40,11 +40,11 @@ class App extends React.Component {
     )
   }
 
-  
   render(){
     const { groceries } = this.state;
     return(
-      <div className ='App'>
+      <div>
+        <h1>Grocery List</h1>
         <List name="Grocery List" items={groceries} itemClick={this.handleClick}/>
         <ItemForm addItem={this.addItem} />
       </div>

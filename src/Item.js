@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const Item = ({id, item, complete, itemClick}) => (
-  <li id='color'
-    style={ complete ? {...styles.grocery, ...styles.complete} : styles.grocery}
+const Item = ({ id, item, complete, itemClick }) => (
+  <li
+    id="color"
+    style={
+      complete ? { ...styles.grocery, ...styles.complete } : styles.grocery
+    }
     onClick={() => itemClick(id)}
-    >
-      { item }
+  >
+    {item}
   </li>
 );
 
 const styles = {
-  grocery: { cursor: 'pointer'},
-  complete: { color: '#57606f', textDecoration: 'line-through'},
-}
+  grocery: { cursor: "pointer" },
+  complete: { color: "#57606f", textDecoration: "line-through" }
+};
 
 export default Item;
